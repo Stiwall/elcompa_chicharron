@@ -866,13 +866,10 @@
         </div>
 
         <div class="feat-card fu fu5" onclick="goTo('menu')">
-            <div style="position:relative; width:130px; min-height:130px; flex-shrink:0; overflow:hidden; background:#000;">
-                <video autoplay muted loop playsinline preload="auto"
-                       style="width:100%; height:130px; object-fit:cover; display:block;">
-                    <source src="costillitas_de_cerdo.mp4" type="video/mp4">
-                    <img src="costillitas.jpg" style="width:100%;height:100%;object-fit:cover;">
-                </video>
-            </div>
+            <img class="feat-card-img sk"
+                 src="costillitas.jpg" alt="Costillitas"
+                 onload="this.classList.remove('sk')"
+                 onerror="this.src='https://placehold.co/130x130/c1121f/fff?text=🍖'; this.classList.remove('sk')">
             <div class="feat-card-body">
                 <div>
                     <h3>Costillitas de Cerdo</h3>
