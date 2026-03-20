@@ -1,6 +1,7 @@
 {
   "name": "El Compa Chicharrones",
   "short_name": "El Compa",
+  "id": "el-compa-chicharron",
   "description": "El mejor chicharrón dominicano. Ordena por WhatsApp.",
   "start_url": "/",
   "scope": "/",
