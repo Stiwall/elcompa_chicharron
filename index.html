@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://stiwall.github.io/elcompa_chicharron/chicharron.jpg">
 
     <!-- Google Analytics GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDX5236PXY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -855,7 +855,8 @@
 
         <!-- Hero -->
         <div class="hero fu">
-            <video autoplay muted loop playsinline preload="none" poster="portada.jpg">
+            <video autoplay muted loop playsinline preload="none" poster="portada.jpg"
+                   onerror="this.replaceWith(this.querySelector('img') || this)">
                 <source src="chicharron_cerdo.mp4" type="video/mp4">
                 <img class="hero-img" src="portada.jpg" alt="Chicharrón"
                      onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80'">
@@ -997,7 +998,8 @@
                 <div class="vid-card-media">
                     <div class="vid-badge"><i class="fas fa-video"></i> Video en vivo</div>
                     <video autoplay muted loop playsinline preload="none" poster="costillitas.jpg"
-                           style="width:100%;height:100%;object-fit:cover;display:block;">
+                           style="width:100%;height:100%;object-fit:cover;display:block;"
+                           onerror="this.replaceWith(this.cloneNode(false))">
                         <source src="costillitas_de_cerdo.mp4" type="video/mp4">
                         <img src="costillitas.jpg" alt="Costillitas" style="width:100%;height:100%;object-fit:cover;">
                     </video>
@@ -1021,7 +1023,8 @@
             <div class="vid-card" data-cat="encargo">
                 <div class="vid-card-media">
                     <div class="vid-badge"><i class="fas fa-video"></i> Video en vivo</div>
-                    <video autoplay muted loop playsinline preload="none" poster="pancetas_rellenas.jpg">
+                    <video autoplay muted loop playsinline preload="none" poster="pancetas_rellenas.jpg"
+                           onerror="this.replaceWith(this.cloneNode(false))">
                         <source src="video-panceta.mp4" type="video/mp4">
                         <img src="pancetas_rellenas.jpg" alt="Pancetas" style="width:100%;height:100%;object-fit:cover;">
                     </video>
