@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="El Compa Chicharrones – El mejor chicharrón dominicano en San Isidro, El Bonito, República Dominicana. Chicharrón de cerdo crujiente, costillitas y más. Ordena por WhatsApp.">
     <meta name="keywords" content="chicharron dominicano, chicharron san isidro, chicharron el bonito, chicharron republica dominicana, el compa chicharrones, comida dominicana, chicharron de cerdo, costillitas de cerdo, pierna de cerdo RD">
-    <meta name="theme-color" content="#e63946">
+    <meta name="theme-color" content="#FF8C00">
     <meta name="robots" content="index, follow">
     <meta name="author" content="El Compa Chicharrones">
     <link rel="canonical" href="https://stiwall.github.io/elcompa_chicharron/">
@@ -25,6 +25,15 @@
     <meta name="twitter:title" content="El Compa Chicharrones | Chicharrón Dominicano en San Isidro">
     <meta name="twitter:description" content="El mejor chicharrón dominicano en San Isidro, El Bonito. Hecho al momento. Ordena por WhatsApp.">
     <meta name="twitter:image" content="https://stiwall.github.io/elcompa_chicharron/chicharron.jpg">
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BDX5236PXY');
+    </script>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -62,23 +71,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-        --red:    #e63946;
-        --red2:   #c1121f;
-        --gold:   #ffb703;
-        --green:  #16a34a;
-        --dark:   #0f0f0f;
-        --gray:   #f4f4f5;
-        --muted:  #71717a;
-        --white:  #ffffff;
-        --radius: 18px;
+        --negro:  #1A1A1B;
+        --naranja: #FF8C00;
+        --amarillo: #FFC300;
+        --blanco:  #FDFDFD;
+        --green:   #16a34a;
+        --gray:    #f4f4f5;
+        --muted:   #71717a;
+        --white:   #FDFDFD;
+        --radius:  18px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
         font-family: 'DM Sans', sans-serif;
-        background: #f5f5f5;
-        color: var(--dark);
+        background: #FDFDFD;
+        color: var(--negro);
         -webkit-tap-highlight-color: transparent;
         overflow-x: hidden;
     }
@@ -88,7 +97,7 @@
     /* ── SPLASH SCREEN ── */
     #splash {
         position: fixed; inset: 0;
-        background: var(--dark);
+        background: var(--negro);
         display: flex; flex-direction: column;
         align-items: center; justify-content: center;
         z-index: 9999;
@@ -99,7 +108,7 @@
     #splash img {
         width: 120px; height: 120px;
         border-radius: 50%;
-        border: 3px solid var(--red);
+        border: 3px solid var(--naranja);
         object-fit: cover;
         animation: splashPop 0.6s cubic-bezier(.34,1.56,.64,1) both;
     }
@@ -116,7 +125,7 @@
     #splash p {
         font-size: 11px;
         font-weight: 600;
-        color: var(--gold);
+        color: var(--amarillo);
         text-transform: uppercase;
         letter-spacing: 0.2em;
         margin-top: 6px;
@@ -130,8 +139,8 @@
 
     /* ── STATUS BAR ── */
     .status-bar {
-        background: var(--dark);
-        color: var(--gold);
+        background: var(--negro);
+        color: var(--amarillo);
         font-size: 11px;
         font-weight: 700;
         text-align: center;
@@ -177,7 +186,7 @@
         width: 46px; height: 46px;
         border-radius: 50%;
         overflow: hidden;
-        border: 2px solid var(--red);
+        border: 2px solid var(--naranja);
         flex-shrink: 0;
     }
 
@@ -187,7 +196,7 @@
         font-family: 'Abril Fatface', cursive;
         font-size: 20px;
         letter-spacing: 1.5px;
-        color: var(--red);
+        color: var(--naranja);
         line-height: 1;
     }
 
@@ -245,7 +254,7 @@
         white-space: nowrap;
     }
 
-    .tab.active { color: var(--red); border-bottom-color: var(--red); }
+    .tab.active { color: var(--naranja); border-bottom-color: var(--naranja); }
 
     /* ── MAIN ── */
     main {
@@ -286,8 +295,8 @@
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        background: var(--gold);
-        color: var(--dark);
+        background: var(--amarillo);
+        color: var(--negro);
         font-size: 10px;
         font-weight: 800;
         letter-spacing: 0.1em;
@@ -338,7 +347,7 @@
     }
 
     .cta-btn:active { transform: scale(0.97); }
-    .cta-red   { background: var(--red); color: #fff; }
+    .cta-red   { background: var(--naranja); color: #fff; }
     .cta-green { background: var(--green); color: #fff; }
 
     /* ── PILLS / CATEGORIES ── */
@@ -366,9 +375,9 @@
     }
 
     .cat-pill.on {
-        background: var(--dark);
+        background: var(--negro);
         color: #fff;
-        border-color: var(--dark);
+        border-color: var(--negro);
     }
 
     /* ── SECTION LABEL ── */
@@ -381,7 +390,7 @@
         justify-content: space-between;
     }
 
-    .sec-label span { font-size: 12px; font-weight: 600; color: var(--red); }
+    .sec-label span { font-size: 12px; font-weight: 600; color: var(--naranja); }
 
     /* ── FEATURED CARD (horizontal big) ── */
     .feat-card {
@@ -438,7 +447,7 @@
     .price {
         font-size: 16px;
         font-weight: 800;
-        color: var(--dark);
+        color: var(--negro);
     }
 
     .price sub {
@@ -450,7 +459,7 @@
     }
 
     .add-btn {
-        background: var(--red);
+        background: var(--naranja);
         color: #fff;
         border: none;
         border-radius: 10px;
@@ -467,8 +476,8 @@
     .badge-top {
         position: absolute;
         top: 10px; left: 10px;
-        background: var(--gold);
-        color: var(--dark);
+        background: var(--amarillo);
+        color: var(--negro);
         font-size: 9px;
         font-weight: 800;
         letter-spacing: 0.08em;
@@ -481,7 +490,7 @@
         position: absolute;
         top: 10px; right: 10px;
         background: #fff;
-        color: var(--dark);
+        color: var(--negro);
         font-size: 9px;
         font-weight: 800;
         letter-spacing: 0.06em;
@@ -626,7 +635,7 @@
 
     .review-header h4 { font-size: 13px; font-weight: 800; }
 
-    .stars { color: var(--gold); font-size: 11px; margin-top: 1px; }
+    .stars { color: var(--amarillo); font-size: 11px; margin-top: 1px; }
 
     .review-card p {
         font-size: 12px;
@@ -744,11 +753,11 @@
 
     /* ── FOOTER ── */
     footer {
-        background: var(--dark);
+        background: var(--negro);
         padding: 28px 16px;
         text-align: center;
     }
-    footer .brand { font-size: 22px; color: var(--red); }
+    footer .brand { font-size: 22px; color: var(--naranja); }
     footer small  { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.15em; }
 
     /* ── SKELETON ── */
@@ -787,12 +796,12 @@
         font-size: 44px;
         font-weight: 800;
         line-height: 1;
-        color: var(--dark);
+        color: var(--negro);
     }
 
     .rating-big span { font-size: 18px; color: var(--muted); }
 
-    .rating-stars { color: var(--gold); font-size: 16px; margin-bottom: 4px; }
+    .rating-stars { color: var(--amarillo); font-size: 16px; margin-bottom: 4px; }
     .rating-count { font-size: 11px; color: var(--muted); font-weight: 600; }
     </style>
 </head>
@@ -800,7 +809,7 @@
 
 <!-- SPLASH -->
 <div id="splash">
-    <img src="https://i.ibb.co/qY0X0Sqh/logo.jpg" alt="Logo" onerror="this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'🐷',style:'width:120px;height:120px;border-radius:50%;border:3px solid #e63946;background:#1a0a00;display:flex;align-items:center;justify-content:center;font-size:52px;animation:splashPop 0.6s cubic-bezier(.34,1.56,.64,1) both'}))" style="animation:splashPop 0.6s cubic-bezier(.34,1.56,.64,1) both">
+    <img src="https://i.ibb.co/qY0X0Sqh/logo.jpg" alt="Logo" onerror="this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'🐷',style:'width:120px;height:120px;border-radius:50%;border:3px solid #FF8C00;background:#1a0a00;display:flex;align-items:center;justify-content:center;font-size:52px;animation:splashPop 0.6s cubic-bezier(.34,1.56,.64,1) both'}))" style="animation:splashPop 0.6s cubic-bezier(.34,1.56,.64,1) both">
     <h1>EL COMPA</h1>
     <p>Chicharrones Dominicanos 🇩🇴</p>
 </div>
