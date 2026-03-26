@@ -735,6 +735,12 @@
     .cc-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
 
     /* ── WA FLOAT ── */
+    /* Video facade */
+    #hero-vid, .vid-facade { position:relative;width:100%;height:100%;cursor:pointer;overflow:hidden; }
+    .play-btn { position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,140,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;pointer-events:none; }
+    .play-btn-sm { position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:rgba(255,140,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;pointer-events:none; }
+    .vid-badge-overlay { position:absolute;top:10px;left:10px;background:rgba(0,0,0,0.65);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px; }
+
     .wa-float {
         position: fixed;
         bottom: 22px; right: 18px;
@@ -855,10 +861,10 @@
 
         <!-- Hero -->
         <div class="hero fu">
-            <iframe src="https://www.youtube.com/embed/OzGScNvqaWg?autoplay=1&mute=1&loop=1&playlist=OzGScNvqaWg&controls=0&playsinline=1&modestbranding=1"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                    style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border:0;pointer-events:none;">
-            </iframe>
+            <div id="hero-vid" onclick="playHero(this,'OzGScNvqaWg')">
+                <img src="https://img.youtube.com/vi/OzGScNvqaWg/maxresdefault.jpg" alt="Chicharrón Dominicano" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://img.youtube.com/vi/OzGScNvqaWg/hqdefault.jpg'">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
             <div class="hero-overlay">
                 <div class="hero-tag"><i class="fas fa-fire"></i> Recién Hecho</div>
                 <h2>¡CRUJIENTES!</h2>
@@ -995,10 +1001,11 @@
             <div class="vid-card" data-cat="principales">
                 <div class="vid-card-media">
                     <div class="vid-badge"><i class="fas fa-video"></i> Video en vivo</div>
-                    <iframe src="https://www.youtube.com/embed/t401t6m-BbU?autoplay=1&mute=1&loop=1&playlist=t401t6m-BbU&controls=0&playsinline=1&modestbranding=1"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                            style="width:100%;height:100%;object-fit:cover;display:block;border:0;pointer-events:none;">
-                    </iframe>
+                    <div class="vid-facade" onclick="playVid(this,'t401t6m-BbU')">
+                        <img src="https://img.youtube.com/vi/t401t6m-BbU/maxresdefault.jpg" alt="Costillitas" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://img.youtube.com/vi/t401t6m-BbU/hqdefault.jpg'">
+                        <div class="play-btn-sm"><i class="fas fa-play"></i></div>
+                        <div class="vid-badge-overlay"><i class="fas fa-video"></i> Video</div>
+                    </div>
                 </div>
                 <div class="vid-card-body">
                     <div>
@@ -1019,10 +1026,11 @@
             <div class="vid-card" data-cat="encargo">
                 <div class="vid-card-media">
                     <div class="vid-badge"><i class="fas fa-video"></i> Video en vivo</div>
-                    <iframe src="https://www.youtube.com/embed/mOZNIwGy9UQ?autoplay=1&mute=1&loop=1&playlist=mOZNIwGy9UQ&controls=0&playsinline=1&modestbranding=1"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                            style="width:100%;height:100%;object-fit:cover;display:block;border:0;pointer-events:none;">
-                    </iframe>
+                    <div class="vid-facade" onclick="playVid(this,'mOZNIwGy9UQ')">
+                        <img src="https://img.youtube.com/vi/mOZNIwGy9UQ/maxresdefault.jpg" alt="Pancetas" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://img.youtube.com/vi/mOZNIwGy9UQ/hqdefault.jpg'">
+                        <div class="play-btn-sm"><i class="fas fa-play"></i></div>
+                        <div class="vid-badge-overlay"><i class="fas fa-video"></i> Video</div>
+                    </div>
                 </div>
                 <div class="vid-card-body">
                     <div>
@@ -1264,10 +1272,16 @@
     function hideSplash() {
         document.getElementById('splash').classList.add('hide');
     }
-    // Hide after 1.8s regardless of load state
+    // Hide splash after animation
     setTimeout(hideSplash, 1800);
-    // Also hide as soon as DOM is ready if faster
-    document.addEventListener('DOMContentLoaded', () => setTimeout(hideSplash, 1400));
+
+    // ── VIDEO FACADE ──
+    function playHero(el, id) {
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border:0;"></iframe>';
+    }
+    function playVid(el, id) {
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;object-fit:cover;border:0;"></iframe>';
+    }
 
     // ── NAVIGATION ──
     function goTo(id) {
@@ -1291,15 +1305,18 @@
         document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('on'));
         pill.classList.add('on');
 
-        const groups = document.querySelectorAll('[data-group]');
-        const cards  = document.querySelectorAll('.feat-card, .vid-card, .side-item');
+        const cards = document.querySelectorAll('#s-menu .feat-card, #s-menu .vid-card, #s-menu .side-item');
 
         if (cat === 'all') {
-            groups.forEach(g => g.style.display = '');
+            cards.forEach(c => c.style.display = '');
+            document.querySelectorAll('#s-menu [data-group]').forEach(g => g.style.display = '');
         } else {
-            groups.forEach(g => {
-                g.style.display = g.dataset.group === cat ? '' : 'none';
+            cards.forEach(c => {
+                const cardCat = c.dataset.cat;
+                c.style.display = (cardCat === cat || (cat === 'principales' && cardCat === 'principales')) ? '' : 'none';
             });
+            // Also hide group wrappers that don't match (for sections with multiple cards)
+            // But keep groups visible if they contain matching cards
         }
     }
 
@@ -1326,6 +1343,9 @@
 
     document.getElementById('lightbox').addEventListener('click', function(e) {
         if (e.target === this) closeLb();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLb();
     });
 </script>
 
