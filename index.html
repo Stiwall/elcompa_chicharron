@@ -861,10 +861,10 @@
 
         <!-- Hero -->
         <div class="hero fu">
-            <div id="hero-vid" onclick="playHero(this,'OzGScNvqaWg')">
-                <img src="https://img.youtube.com/vi/OzGScNvqaWg/maxresdefault.jpg" alt="Chicharrón Dominicano" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='https://img.youtube.com/vi/OzGScNvqaWg/hqdefault.jpg'">
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-            </div>
+            <iframe src="https://www.youtube.com/embed/OzGScNvqaWg?autoplay=1&mute=1&loop=1&playlist=OzGScNvqaWg&controls=0&playsinline=1&modestbranding=1"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                    style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border:0;pointer-events:none;">
+            </iframe>
             <div class="hero-overlay">
                 <div class="hero-tag"><i class="fas fa-fire"></i> Recién Hecho</div>
                 <h2>¡CRUJIENTES!</h2>
@@ -1050,7 +1050,7 @@
             <!-- Arroz Beicón -->
             <div class="feat-card" data-cat="principales">
                 <img class="feat-card-img sk"
-                     src="https://placehold.co/130x130/1d3557/fff?text=Arroz"
+                     src="arroz_beicon_new.jpg"
                      alt="Arroz Beicón"
                      onload="this.classList.remove('sk')"
                      onerror="this.src='https://placehold.co/130x130/1d3557/fff?text=🍚'; this.classList.remove('sk')">
@@ -1276,9 +1276,6 @@
     setTimeout(hideSplash, 1800);
 
     // ── VIDEO FACADE ──
-    function playHero(el, id) {
-        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border:0;"></iframe>';
-    }
     function playVid(el, id) {
         el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;object-fit:cover;border:0;"></iframe>';
     }
